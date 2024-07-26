@@ -26,6 +26,7 @@
 <style>
   .container {
     border: 2px dotted white;
+    border-radius: 4px;
     padding: 10px;
   }
 </style>

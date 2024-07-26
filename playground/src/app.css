@@ -3,14 +3,60 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
+  /* background-color: #242424; */
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background: linear-gradient(
+    60deg,
+    #39125b,
+    #572187,
+    #044d63,
+    #792eba,
+    #033d4f,
+    #31124d
+  );
+  background-size: 400% 400%;
+  animation: gradient 180s ease infinite;
+  -moz-animation: gradient 180s ease infinite;
+  -webkit-animation: gradient 180s ease infinite;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@-moz-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 a {
