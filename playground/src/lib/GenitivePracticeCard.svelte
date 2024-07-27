@@ -4,8 +4,6 @@
   export let grammaticalNumber;
   export let nominative;
   export let gender;
-  const genitiveSingularEndings = ["a", "e"];
-  const genitivePluralEndings = ["a"];
 
   let inputValue = "";
 </script>
