@@ -3,16 +3,18 @@
   import GenitivePracticeSuite from "./GenitivePracticeSuite.svelte";
   import Welcome from "./Welcome.svelte";
   import MenuOption from "./MenuOption.svelte";
+  import CrystalBall from "/src/assets/crystal-ball.png";
+  import BlackX from "/src/assets/black-x.png";
   const options = [
     {
       title: "Genitive Practice",
-      imgsrc: "/src/assets/crystal-ball.png",
+      imgsrc: CrystalBall,
       imgalt: "Genitive Practice",
       component: GenitivePracticeSuite,
     },
     {
       title: "Clear Stage",
-      imgsrc: "/src/assets/black-x.png",
+      imgsrc: BlackX,
       imgalt: "Clear Stage",
       // Cheating :) Pass no component so nothing gets added.
       component: Welcome,
