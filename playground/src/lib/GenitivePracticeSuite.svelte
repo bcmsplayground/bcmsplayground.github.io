@@ -1,8 +1,10 @@
 <script>
   import { SINGULAR, PLURAL, MASCULINE, FEMININE } from "./constants.svelte";
   import GenitivePracticeCard from "./GenitivePracticeCard.svelte";
+  import { UUIDGeneratorBrowser } from "./utils.svelte";
+  import { VISIBLE, HIDDEN } from "./constants.svelte";
 
-  const sentences = [
+  let sentences = [
     {
       sentence: "Molim vas, pitu od sir_.",
       nominative: "sir",
@@ -74,7 +76,7 @@
       gender: FEMININE,
     },
     {
-      sentence: "Može li sok od rajčic_? (množina)",
+      sentence: "Može li sok od rajčic_?",
       answer: "a",
       grammaticalNumber: PLURAL,
       nominative: "rajčice",
@@ -95,14 +97,32 @@
       gender: MASCULINE,
     },
   ];
+  for (let sentence of sentences) {
+    sentence.uuid = UUIDGeneratorBrowser();
+    sentence.visibility = HIDDEN;
+  }
+  sentences[0]["visibility"] = VISIBLE;
+
+  const ordering = Object.fromEntries(
+    sentences.map((sentence) => [sentence.uuid, sentence])
+  );
 </script>
 
-<div>
+<div class="genitive-practice-suite">
   <h2>It's time to practice genitive.</h2>
   <p>
     Fill in the input boxes with the missing letters from the example sentences.
   </p>
   {#each sentences as sentence}
-    <GenitivePracticeCard {...sentence} /><br />
+    <GenitivePracticeCard {...sentence} sentenceMap={ordering} />
   {/each}
 </div>
+
+<style>
+  .genitive-practice-suite {
+    position: fixed;
+    top: 50px;
+    left: 30%;
+    right: 30%;
+  }
+</style>
